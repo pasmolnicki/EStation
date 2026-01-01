@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "../TouchButton.h"
 #include "../../data_structures/Props.h"
 #include "../../output/button.h"

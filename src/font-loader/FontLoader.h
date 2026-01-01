@@ -4,7 +4,7 @@
 #include "../lang/config.h"
 #include "../data_structures/Props.h"
 
-extern bool USE_CUSTOM_FONT;
+// extern bool USE_CUSTOM_FONT;
 
 /// @brief Loads desired font. If custom font is specified and located in SPIFFS 
 /// then its used as a main font, else uses deafult font.
@@ -37,32 +37,31 @@ void FontLoader::build(uint16_t& x, T* elem, TextProps* props) {
 
     elem->setTextColor(color, bg);
 
-    if (elem->fontLoaded){
-        elem->unloadFont();
+    // if (elem->fontLoaded){
+    //     elem->unloadFont();
+    // }
+    //  if (USE_CUSTOM_FONT){
+    //     elem->loadFont(font);
+    // }
+   
+    // Set accordingly default fonts
+    if(font == useFont(fonts::detail) ){
+        elem->setTextSize(1);
+        elem->setTextFont(2);
     }
-     if (USE_CUSTOM_FONT){
-        elem->loadFont(font);
+    if (font == useFont(fonts::normal)){
+        elem->setTextSize(2);
+        elem->setTextFont(2);
     }
-    else{
-        // Set accordingly default fonts
-        
-        if(font == useFont(fonts::detail) ){
-            elem->setTextSize(1);
-            elem->setTextFont(2);
-        }
-        if (font == useFont(fonts::normal)){
-            elem->setTextSize(2);
-            elem->setTextFont(2);
-        }
-        if(font == useFont(fonts::title)){
-            elem->setTextSize(2);
-            elem->setTextFont(4);
-        }
-        if (font == useFont(fonts::clock)){
-            elem->setTextFont(6);
-            elem->setTextSize(1);
-        }
+    if(font == useFont(fonts::title)){
+        elem->setTextSize(2);
+        elem->setTextFont(4);
     }
+    if (font == useFont(fonts::clock)){
+        elem->setTextFont(6);
+        elem->setTextSize(1);
+    }
+    
     // Set text placement
     switch(placement){
         case placement::middle:

@@ -5,7 +5,7 @@ auto forecastedWeather = Forecast();
 auto analizedForecast = std::vector<Weather>();
 auto todayForecast = std::vector<Weather>(3, Weather());
 
-extern auto wProvider = WeatherProvider();
+auto wProvider = WeatherProvider();
 
 extern LocationProps locProps;
 

@@ -11,7 +11,7 @@ FontLoader::FontLoader(uint16_t& x, TextProps* props, TFT_eSprite* sprite){
 }
 
 FontLoader::~FontLoader(){
-    if (USE_CUSTOM_FONT && tft.fontLoaded){
-        tft.unloadFont();
-    }
+    // if (USE_CUSTOM_FONT && tft.fontLoaded){
+    //     tft.unloadFont();
+    // }
 }

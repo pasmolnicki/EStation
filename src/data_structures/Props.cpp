@@ -1,7 +1,7 @@
 #include "Props.h"
 
-extern auto wifiProps = WifiProps();
-extern LocationProps locProps = LocationProps();
+auto wifiProps = WifiProps();
+auto locProps = LocationProps();
 
 WifiProps& getWifiProps(){
     return wifiProps;

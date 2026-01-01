@@ -1,6 +1,6 @@
 #include "MemoryProvider.h"
 
-extern MemoryProvider memoryProvider = MemoryProvider();
+auto memoryProvider = MemoryProvider();
 
 // Get the global instance of the MemoryProvider
 MemoryProvider& MemoryProvider::getInstance(){

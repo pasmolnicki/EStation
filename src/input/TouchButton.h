@@ -2,6 +2,9 @@
 
 #include <TFT_eSPI.h>
 
+#include <functional>
+#include <memory>
+
 constexpr uint16_t DEFAULT_BTN_COLOR = 0x3166;
 
 class

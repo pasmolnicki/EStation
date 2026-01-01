@@ -43,5 +43,5 @@ public:
 
     String formatDate(const date_format& format = date_format::full_date);
 
-    String formatTime(char* format = "%T");
+    String formatTime(const char* format = "%T");
 };

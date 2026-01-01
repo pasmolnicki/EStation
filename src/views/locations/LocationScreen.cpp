@@ -112,10 +112,12 @@ namespace ui
 
         if(wProvider.getSpecLocations()->empty()){
             // Fetch locations
-            AsyncTask<LocationScreen*>(
+            AsyncTask<>(
                 TaskParams().setUsePinnedCore(true), 
-                fetchLocationsTask
-            ).run(this);
+                [this]() {
+                    fetchLocationsTask(this);
+                }
+            ).run();
         }
     }
 

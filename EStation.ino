@@ -5,7 +5,7 @@
 Router router;
 extern MemoryProvider memoryProvider;
 extern Localizer localizer;
-extern String CURRENT_VER = "1.1.0";
+String CURRENT_VER = "1.1.0";
 
 static SemaphoreHandle_t scene_mutex = xSemaphoreCreateMutex();
 static bool keep_loading = true;

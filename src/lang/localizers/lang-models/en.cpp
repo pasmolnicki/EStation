@@ -70,5 +70,7 @@ String date_format_en(struct tm* info, date_format format){
     case date_format::hour_minute:
         // Hour and minute format: 12:00
         return strftime(buffer, size, "%H:%M", info) ? String(buffer) : String("Err");
-    }    
+    default:
+        return String("");
+    }
 }

@@ -40,8 +40,6 @@ void drawTextButton(
 
     x = _x;
 
-    
-
     // Support for default text render (which doesn't detect new lines in text '\n')
     const String _txt = props->text;
     std::vector<String> _lines;
@@ -63,8 +61,5 @@ void drawTextButton(
             sprite->drawString(_lines[i], x, _y);
         }        
         _y += h;
-    }
-    if (sprite && sprite->fontLoaded){
-        sprite->unloadFont();
     }
 }

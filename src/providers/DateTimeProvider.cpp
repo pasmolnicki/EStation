@@ -1,7 +1,7 @@
 #include "DateTimeProvider.h"
 
 extern Localizer localizer;
-extern auto dateProvider = DateTimeProvider();
+auto dateProvider = DateTimeProvider();
 
 DateTimeProvider::DateTimeProvider(): _update(true), _lastTimeUpdate(0), _initialized(false) {}
 
@@ -34,7 +34,7 @@ String DateTimeProvider::formatDate(const date_format& format){
     return localizer.getDateFormatter()(&_timeinfo, format);
 }
 
-String DateTimeProvider::formatTime(char* format){
+String DateTimeProvider::formatTime(const char* format){
     char buffer[32];
     auto size = strftime(buffer, 32, format, &_timeinfo);
     return size != 0 ? String(buffer) : String("Err");

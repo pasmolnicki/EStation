@@ -1,6 +1,6 @@
 #include "WiFiProvider.h"
 
-extern WiFiProvider wifiProvider = WiFiProvider();
+auto wifiProvider = WiFiProvider();
 
 static std::vector<WifiInfo> _wifis = std::vector<WifiInfo>();
 

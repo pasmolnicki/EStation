@@ -1,6 +1,6 @@
 #include "pl.h"
 
-extern bool USE_CUSTOM_FONT;
+// extern bool USE_CUSTOM_FONT;
 
 // Forward declarations
 void localize_pl();
@@ -30,13 +30,13 @@ void localize_pl(){
     locale->MANAGE_NETWORKS = "Zarzadzaj sieciami";
 
     // If custom font is used, add special characters
-    if (USE_CUSTOM_FONT){
-        locale->CHOOSE_WIFI_TITLE = "Wybierz sieć";
-        locale->PICK_LANG = "Wybierz język";
-        locale->CURRENT_LANG = "Aktualny język";
-        locale->NEXT_3_DAYS = "Następne 3 dni";
-        locale->HUMIDITY = "Wilgotność";
-    }
+    // if (USE_CUSTOM_FONT){
+    //     locale->CHOOSE_WIFI_TITLE = "Wybierz sieć";
+    //     locale->PICK_LANG = "Wybierz język";
+    //     locale->CURRENT_LANG = "Aktualny język";
+    //     locale->NEXT_3_DAYS = "Następne 3 dni";
+    //     locale->HUMIDITY = "Wilgotność";
+    // }
 
     locale->SETTINGS_TITLE = "Ustawienia";
     locale->SYSTEM = "Jednostki";
@@ -91,5 +91,7 @@ String date_format_pl(struct tm* info, date_format format){
             char buffer[64];
             return strftime(buffer, 64, "%H:%M", info) ? String(buffer) : String("Err");
         }
-    } 
+        default:
+            return String("");
+    }
 }

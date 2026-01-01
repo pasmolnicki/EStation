@@ -7,7 +7,7 @@ extern ErrorProvider errorProvider;
 extern LocationProps locProps;
 
 // create a scheduler
-extern Scheduler scheduler = Scheduler();
+auto scheduler = Scheduler();
 
 namespace ui
 {
